@@ -31,7 +31,11 @@ a {
 ========================= */
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  z-index: 1000;
   height: 92px;
   background: linear-gradient(90deg, #00132f, #001a42);
   display: flex;
@@ -39,8 +43,6 @@ a {
   justify-content: space-between;
   padding: 0 54px;
   color: var(--white);
-  position: relative;
-  z-index: 100;
 }
 
 .logo {
@@ -694,4 +696,4 @@ a {
   .services-grid {
     grid-template-columns: 1fr !important;
   }
-}`
+}
