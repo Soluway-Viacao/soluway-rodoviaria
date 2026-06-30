@@ -644,7 +644,7 @@ a {
   }
 
   .hero-content .mini-card-left {
-    width: 100%;
+    width: auto;
   }
 }
 /* CARDS DE SERVIÇOS LADO A LADO NO DESKTOP */
@@ -696,4 +696,27 @@ a {
   .services-grid {
     grid-template-columns: 1fr !important;
   }
+}
+
+.hero {
+  height: auto !important;
+  min-height: 100vh;
+  overflow: visible !important;
+  padding-bottom: 100px;
+}
+
+.hero-content,
+.hero-container,
+.hero-wrapper {
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+}
+
+.hero-stats,
+.hero-benefits,
+.benefits-row,
+.info-cards {
+  flex-wrap: wrap;
+  margin-bottom: 40px;
 }
