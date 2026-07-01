@@ -229,6 +229,7 @@ a {
 
 .tag.center {
   justify-content: center;
+  font-size: 27px;
 }
 
 .hero h1 {
@@ -719,4 +720,30 @@ a {
 .info-cards {
   flex-wrap: wrap;
   margin-bottom: 40px;
+}
+.btn-voltar-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-right: -140px;
+
+  padding: 12px 20px;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+
+  transition: all 0.3s ease;
+}
+
+.btn-voltar-home:hover {
+  background: #f5a800;
+  color: #001b3a;
 }
