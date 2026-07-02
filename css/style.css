@@ -117,13 +117,13 @@ a {
 ========================= */
 
 .hero {
+  min-height: calc(100vh - 92px);
+  width: 100%;
+  display: flex;
+  align-items: center;
   position: relative;
-  height: 750px;
-  min-height: 750px;
-  display: grid;
-  grid-template-columns: 36% 27% 37%;
   overflow: hidden;
-  background: #ffffff;
+  padding-bottom: 0;
 }
 
 /* Fundo com ônibus ocupando toda a hero */
@@ -131,8 +131,7 @@ a {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 750px;
-  min-height: 750px;
+  height: 100%;
   overflow: hidden;
   z-index: 1;
 }
@@ -141,9 +140,9 @@ a {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 750px;
+  height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center right;
   z-index: 1;
   display: block;
 }
@@ -355,6 +354,7 @@ a {
   align-items: center;
   justify-content: center;
   padding-top: 10px;
+  transform: translateX(-120px);
 }
 
 .whatsapp-card {
@@ -550,11 +550,10 @@ a {
   }
 
   .hero {
-    height: auto;
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-  }
+  min-height: calc(100vh - 92px);
+  overflow: hidden !important;
+  padding-bottom: 0;
+}
 
   .hero-visual {
     position: relative;
@@ -564,8 +563,8 @@ a {
   }
 
   .hero-visual .bus-bg {
-    height: 520px;
-  }
+  height: 100%;
+}
 
   .hero-visual .person-img {
     right: 20px;
@@ -700,10 +699,9 @@ a {
 }
 
 .hero {
-  height: auto !important;
-  min-height: 100vh;
-  overflow: visible !important;
-  padding-bottom: 100px;
+  min-height: calc(100vh - 92px);
+  overflow: hidden !important;
+  padding-bottom: 0;
 }
 
 .hero-content,
@@ -755,3 +753,418 @@ a {
     alt="Rodoviária moderna com ônibus"
   />
 </section>
+
+/* AJUSTE FINAL HERO - SOLUWAY RODOVIÁRIA */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.hero {
+  width: 100%;
+  min-height: calc(100vh - 40px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.hero-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-visual .bus-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  display: block;
+  z-index: 1;
+}
+
+.hero-visual .person-img {
+  position: absolute;
+  right: -40px;
+  bottom: 0;
+  height: 88%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  z-index: 8;
+}
+
+.hero-content,
+.whatsapp-center {
+  position: relative;
+  z-index: 30;
+}
+
+.services {
+  margin-top: 0 !important;
+}
+/* AJUSTE FINAL HERO - RODOVIÁRIA */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.hero {
+  width: 100%;
+  min-height: calc(100vh - 92px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.hero-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-visual .station-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 68%;
+  display: block;
+  z-index: 1;
+}
+
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.98) 24%,
+    rgba(255, 255, 255, 0.82) 40%,
+    rgba(255, 255, 255, 0.45) 58%,
+    rgba(255, 255, 255, 0.08) 78%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-content,
+.whatsapp-center {
+  position: relative;
+  z-index: 30;
+}
+
+.services {
+  margin-top: 0 !important;
+}
+
+/* =========================
+   RESPONSIVIDADE GERAL - HERO RODOVIÁRIA
+========================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.hero {
+  width: 100%;
+  min-height: calc(100vh - 92px);
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(320px, 42%) minmax(260px, 28%) minmax(220px, 30%);
+  align-items: center;
+  overflow: hidden !important;
+  padding: 92px 54px 0;
+  margin: 0;
+}
+
+.hero-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-visual .station-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 64%;
+  display: block;
+  z-index: 1;
+}
+
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.98) 25%,
+    rgba(255, 255, 255, 0.82) 42%,
+    rgba(255, 255, 255, 0.45) 58%,
+    rgba(255, 255, 255, 0.1) 78%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-content {
+  grid-column: 1 / 2;
+  position: relative;
+  z-index: 30;
+  padding: 0;
+  max-width: 560px;
+}
+
+.whatsapp-center {
+  grid-column: 2 / 3;
+  position: relative;
+  z-index: 35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 4vw, 4.8rem);
+  line-height: 1.08;
+}
+
+.hero p {
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  max-width: 560px;
+}
+
+.services {
+  margin-top: 0 !important;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+  .header {
+    padding: 0 28px;
+  }
+
+  .nav {
+    gap: 24px;
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr 330px;
+    padding: 130px 28px 60px;
+    gap: 32px;
+  }
+
+  .hero-content {
+    grid-column: 1 / 2;
+  }
+
+  .whatsapp-center {
+    grid-column: 2 / 3;
+  }
+
+  .hero-visual .station-img {
+    object-position: center right;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+  }
+
+  .benefits {
+    flex-wrap: wrap;
+  }
+}/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+    height: auto;
+    padding: 22px;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    font-size: 14px;
+  }
+
+  .btn-voltar-home {
+    margin-right: 0;
+  }
+
+  .hero {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 42px 22px 0;
+    gap: 28px;
+    overflow: hidden !important;
+  }
+
+  .hero-visual {
+    position: relative;
+    order: 3;
+    width: calc(100% + 44px);
+    height: 360px;
+    margin: 10px -22px 0;
+  }
+
+  .hero-visual .station-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+  }
+
+  .hero-visual::before {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.55) 38%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .hero-content {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .whatsapp-center {
+    order: 2;
+    width: 100%;
+    padding: 0;
+  }
+
+  .whatsapp-card {
+    width: 100%;
+    max-width: 340px;
+    transform: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .benefits {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .benefit-line {
+    display: none;
+  }
+
+  .main-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-content .mini-card-left {
+    margin-bottom: 0;
+  }
+
+  .services {
+    padding: 42px 22px 48px;
+  }
+}@media (max-width: 480px) {
+  .logo {
+    font-size: 26px;
+  }
+
+  .hero {
+    padding: 34px 18px 0;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .tag {
+    font-size: 13px;
+  }
+
+  .hero-visual {
+    width: calc(100% + 36px);
+    height: 300px;
+    margin-left: -18px;
+    margin-right: -18px;
+  }
+
+  .whatsapp-card {
+    max-width: 100%;
+  }
+}
+/* AJUSTE FINO HERO RODOVIÁRIA */
+
+.hero {
+  min-height: calc(100vh - 92px) !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.hero-visual {
+  height: 100% !important;
+  min-height: 100% !important;
+}
+
+.hero-visual .station-img {
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 62% !important;
+}
+
+.services {
+  margin-top: 0 !important;
+}
