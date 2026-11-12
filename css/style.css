@@ -1,3 +1,29 @@
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -117,13 +143,11 @@ a {
 ========================= */
 
 .hero {
-  min-height: calc(100vh - 92px);
-  width: 100%;
+  min-height: calc(100vh - 84px);
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-bottom: 0;
 }
 
 /* Fundo com ônibus ocupando toda a hero */
@@ -131,7 +155,8 @@ a {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 100%;
+  height: 750px;
+  min-height: 750px;
   overflow: hidden;
   z-index: 1;
 }
@@ -140,9 +165,9 @@ a {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 100%;
+  height: 750px;
   object-fit: cover;
-  object-position: center right;
+  object-position: center center;
   z-index: 1;
   display: block;
 }
@@ -213,7 +238,7 @@ a {
   display: flex;
   align-items: center;
   gap: 14px;
-  color: var(--gold);
+  color: #996600;
   font-size: 15px;
   font-weight: 900;
   margin-bottom: 22px;
@@ -241,7 +266,7 @@ a {
 }
 
 .hero h1 strong {
-  color: var(--gold);
+  color: #996600;
 }
 
 .hero p {
@@ -354,7 +379,6 @@ a {
   align-items: center;
   justify-content: center;
   padding-top: 10px;
-  transform: translateX(-120px);
 }
 
 .whatsapp-card {
@@ -421,7 +445,7 @@ a {
   box-shadow: 0 8px 20px rgba(0, 20, 60, 0.04);
 }
 
-.phone-body button {
+.phone-body .demo-option {
   width: 100%;
   border: none;
   background: var(--white);
@@ -434,15 +458,14 @@ a {
   display: flex;
   align-items: center;
   gap: 12px;
-  cursor: pointer;
   box-shadow: 0 7px 15px rgba(0, 20, 60, 0.035);
 }
 
-.phone-body button:last-child {
+.phone-body .demo-option:last-child {
   margin-bottom: 0;
 }
 
-.phone-body button i {
+.phone-body .demo-option i {
   width: 20px;
   color: var(--navy);
   text-align: center;
@@ -453,7 +476,7 @@ a {
 ========================= */
 
 .services {
-  margin-top: 70px;
+  margin-top: 50px;
   padding: 55px 54px 58px;
   background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
 }
@@ -550,10 +573,11 @@ a {
   }
 
   .hero {
-  min-height: calc(100vh - 92px);
-  overflow: hidden !important;
-  padding-bottom: 0;
-}
+    height: auto;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+  }
 
   .hero-visual {
     position: relative;
@@ -563,8 +587,8 @@ a {
   }
 
   .hero-visual .bus-bg {
-  height: 100%;
-}
+    height: 520px;
+  }
 
   .hero-visual .person-img {
     right: 20px;
@@ -699,17 +723,18 @@ a {
 }
 
 .hero {
-  min-height: calc(100vh - 92px);
-  overflow: hidden !important;
-  padding-bottom: 0;
+  height: auto !important;
+  min-height: 100vh;
+  overflow: visible !important;
+  padding-bottom: 100px;
 }
 
-.hero-content,
-.hero-container,
-.hero-wrapper {
-  height: auto !important;
-  min-height: auto !important;
-  overflow: visible !important;
+.container,
+.hero-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
 .hero-stats,
@@ -724,7 +749,7 @@ a {
   align-items: center;
   gap: 8px;
 
-  margin-right: -140px;
+  margin-right: 0;
 
   padding: 12px 20px;
 
@@ -746,425 +771,100 @@ a {
   color: #001b3a;
 }
 
-<section class="hero-visual">
-  <img
-    class="station-img"
-    src="assets/img_rodoviaria.png"
-    alt="Rodoviária moderna com ônibus"
-  />
-</section>
-
-/* AJUSTE FINAL HERO - SOLUWAY RODOVIÁRIA */
-
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+@media (max-width: 768px) {
+  .container,
+  .hero-container {
+    padding: 0 20px;
+  }
 }
-
+/* Ajustes pontuais na transição e nos cartões de soluções. */
 .hero {
-  width: 100%;
-  min-height: calc(100vh - 40px);
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden !important;
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
+  padding-bottom: 24px;
 }
-
-.hero-visual {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.hero-visual .bus-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center right;
-  display: block;
-  z-index: 1;
-}
-
-.hero-visual .person-img {
-  position: absolute;
-  right: -40px;
-  bottom: 0;
-  height: 88%;
-  width: auto;
-  object-fit: contain;
-  display: block;
-  z-index: 8;
-}
-
-.hero-content,
-.whatsapp-center {
-  position: relative;
-  z-index: 30;
-}
-
 .services {
-  margin-top: 0 !important;
+  margin-top: 0;
+  padding-top: 40px;
+  padding-bottom: 48px;
 }
-/* AJUSTE FINAL HERO - RODOVIÁRIA */
-
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.hero {
-  width: 100%;
-  min-height: calc(100vh - 92px);
-  position: relative;
+.service-card h3 {
+  line-height: 1.25;
+  min-height: 2.5em;
   display: flex;
   align-items: center;
-  overflow: hidden !important;
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.hero-visual {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.hero-visual .station-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 68%;
-  display: block;
-  z-index: 1;
-}
-
-.hero-visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    #ffffff 0%,
-    rgba(255, 255, 255, 0.98) 24%,
-    rgba(255, 255, 255, 0.82) 40%,
-    rgba(255, 255, 255, 0.45) 58%,
-    rgba(255, 255, 255, 0.08) 78%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  z-index: 2;
-  pointer-events: none;
-}
-
-.hero-content,
-.whatsapp-center {
-  position: relative;
-  z-index: 30;
-}
-
-.services {
-  margin-top: 0 !important;
-}
-
-/* =========================
-   RESPONSIVIDADE GERAL - HERO RODOVIÁRIA
-========================= */
-
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.hero {
-  width: 100%;
-  min-height: calc(100vh - 92px);
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(320px, 42%) minmax(260px, 28%) minmax(220px, 30%);
-  align-items: center;
-  overflow: hidden !important;
-  padding: 92px 54px 0;
-  margin: 0;
-}
-
-.hero-visual {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.hero-visual .station-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 64%;
-  display: block;
-  z-index: 1;
-}
-
-.hero-visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    #ffffff 0%,
-    rgba(255, 255, 255, 0.98) 25%,
-    rgba(255, 255, 255, 0.82) 42%,
-    rgba(255, 255, 255, 0.45) 58%,
-    rgba(255, 255, 255, 0.1) 78%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  z-index: 2;
-  pointer-events: none;
-}
-
-.hero-content {
-  grid-column: 1 / 2;
-  position: relative;
-  z-index: 30;
-  padding: 0;
-  max-width: 560px;
-}
-
-.whatsapp-center {
-  grid-column: 2 / 3;
-  position: relative;
-  z-index: 35;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 0;
 }
-
-.hero h1 {
-  font-size: clamp(2.4rem, 4vw, 4.8rem);
-  line-height: 1.08;
-}
-
-.hero p {
-  font-size: clamp(1rem, 1.3vw, 1.25rem);
-  max-width: 560px;
-}
-
-.services {
-  margin-top: 0 !important;
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 1100px) {
-  .header {
-    padding: 0 28px;
-  }
-
-  .nav {
-    gap: 24px;
-  }
-
+@media (min-width: 981px) {
   .hero {
-    min-height: auto;
-    grid-template-columns: 1fr 330px;
-    padding: 130px 28px 60px;
+    min-height: 750px;
+  }
+}
+@media (max-width: 620px) {
+  .service-card h3 {
+    min-height: 0;
+  }
+  .services {
+    padding-top: 34px;
+  }
+}
+
+/* Revisão de navegação e adaptação do cabeçalho. */
+body { padding-top: 92px; }
+.header {
+  position: fixed;
+  gap: 24px;
+}
+.header .nav { margin-left: auto; gap: 28px; }
+.header > a { flex-shrink: 0; white-space: nowrap; }
+#solucoes { scroll-margin-top: 112px; }
+a:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
+.phone-body .demo-label {
+  font-size: 11px;
+  line-height: 1.4;
+  margin: 0 0 12px;
+  text-align: center;
+  color: var(--muted);
+}
+@media (min-width: 981px) {
+  .hero-content { padding-top: 24px; }
+}
+@media (min-width: 981px) and (max-width: 1200px) {
+  .header { padding-left: 28px; padding-right: 28px; gap: 18px; }
+  .header .nav { gap: 20px; }
+  .btn-whatsapp { padding: 14px 18px; }
+}
+@media (max-width: 980px) {
+  body { padding-top: 0; }
+  .header {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+    padding: 20px 24px;
+  }
+  .header .logo { grid-column: 1; grid-row: 1; }
+  .header .btn-voltar-home { grid-column: 2; grid-row: 1; }
+  .header .nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin: 0;
+    justify-content: center;
     gap: 32px;
   }
-
-  .hero-content {
-    grid-column: 1 / 2;
-  }
-
-  .whatsapp-center {
-    grid-column: 2 / 3;
-  }
-
-  .hero-visual .station-img {
-    object-position: center right;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-  }
-
-  .benefits {
-    flex-wrap: wrap;
-  }
-}/* =========================
-   CELULAR
-========================= */
-
-@media (max-width: 768px) {
-  .header {
-    position: relative;
-    height: auto;
-    padding: 22px;
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-    font-size: 14px;
-  }
-
-  .btn-voltar-home {
-    margin-right: 0;
-  }
-
-  .hero {
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 42px 22px 0;
-    gap: 28px;
-    overflow: hidden !important;
-  }
-
-  .hero-visual {
-    position: relative;
-    order: 3;
-    width: calc(100% + 44px);
-    height: 360px;
-    margin: 10px -22px 0;
-  }
-
-  .hero-visual .station-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center bottom;
-  }
-
-  .hero-visual::before {
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(255, 255, 255, 0.55) 38%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  }
-
-  .hero-content {
-    order: 1;
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
-  }
-
-  .whatsapp-center {
-    order: 2;
-    width: 100%;
-    padding: 0;
-  }
-
-  .whatsapp-card {
-    width: 100%;
-    max-width: 340px;
-    transform: none;
-  }
-
-  .hero h1 {
-    font-size: clamp(2rem, 10vw, 3rem);
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .benefits {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .benefit-line {
-    display: none;
-  }
-
-  .main-button {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .hero-content .mini-card-left {
-    margin-bottom: 0;
-  }
-
-  .services {
-    padding: 42px 22px 48px;
-  }
-}@media (max-width: 480px) {
-  .logo {
-    font-size: 26px;
-  }
-
-  .hero {
-    padding: 34px 18px 0;
-  }
-
-  .hero h1 {
-    font-size: 2.1rem;
-  }
-
-  .tag {
-    font-size: 13px;
-  }
-
-  .hero-visual {
-    width: calc(100% + 36px);
-    height: 300px;
-    margin-left: -18px;
-    margin-right: -18px;
-  }
-
-  .whatsapp-card {
-    max-width: 100%;
-  }
+  .header .btn-whatsapp { grid-column: 1 / -1; justify-content: center; }
+  #solucoes { scroll-margin-top: 20px; }
+  .hero { min-height: 0; padding-bottom: 0; }
+  .hero-content { width: 100%; }
+  .hero-content .mini-card-left { margin-bottom: 12px; }
+  .whatsapp-center { width: 100%; }
+  .hero-visual { height: 420px; min-height: 420px; }
+  .hero-visual .bus-bg { height: 100%; }
+  .hero-visual .person-img { height: 400px; right: 0; }
 }
-/* AJUSTE FINO HERO RODOVIÁRIA */
-
-.hero {
-  min-height: calc(100vh - 92px) !important;
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.hero-visual {
-  height: 100% !important;
-  min-height: 100% !important;
-}
-
-.hero-visual .station-img {
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center 62% !important;
-}
-
-.services {
-  margin-top: 0 !important;
+@media (max-width: 620px) {
+  .header .btn-whatsapp { white-space: normal; padding: 14px 12px; text-align: center; }
+  .hero h1 { font-size: clamp(27px, 7.5vw, 34px); letter-spacing: -0.7px; }
+  .hero h1 br { display: none; }
+  .main-button { padding: 18px; gap: 16px; font-size: 16px; }
+  .hero-visual { height: 300px; min-height: 300px; }
+  .hero-visual .person-img { height: 285px; }
 }
