@@ -1191,3 +1191,28 @@ body {
     margin-right: 0;
   }
 }
+
+/* Card compacto abaixo do letreiro no computador. */
+@media (min-width: 1101px) {
+  .whatsapp-center {
+    align-self: end;
+    margin-bottom: 28px;
+  }
+  .whatsapp-card {
+    width: 240px;
+    transform: none;
+  }
+  .whatsapp-card .phone-body {
+    padding: 12px;
+  }
+  .whatsapp-card .message {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  .whatsapp-card .phone-body button {
+    padding: 9px 10px;
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+}
