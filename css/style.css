@@ -1168,3 +1168,26 @@ body {
 .services {
   margin-top: 0 !important;
 }
+/* Mantém a demonstração na sua coluna, sem cobrir o texto. */
+.whatsapp-center {
+  transform: none;
+  min-width: 0;
+}
+.hero-content {
+  min-width: 0;
+}
+.benefits {
+  flex-wrap: wrap;
+}
+@media (min-width: 769px) and (max-width: 980px) {
+  .header {
+    position: relative;
+    padding: 24px 28px;
+  }
+  .hero {
+    padding-top: 44px;
+  }
+  .btn-voltar-home {
+    margin-right: 0;
+  }
+}
