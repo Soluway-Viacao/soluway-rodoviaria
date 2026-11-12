@@ -1222,7 +1222,7 @@ body {
   .hero-visual .station-img {
     width: 106%;
     max-width: none;
-    left: -6%;
+    left: 0;
     right: auto;
   }
   .whatsapp-center {
