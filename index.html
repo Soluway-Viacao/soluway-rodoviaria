@@ -1,6 +1,25 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
+  <!-- Google Analytics: SOLUWAY — Sites públicos -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=G-0V5ZH171MF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      document.addEventListener('click', function (event) {
+        const link = event.target.closest('a[href]');
+        if (!link) return;
+        const url = new URL(link.href, location.href);
+        if (url.hostname !== 'wa.me' && url.hostname !== 'api.whatsapp.com') return;
+        gtag('event', 'whatsapp_click', {
+          send_to: 'G-0V5ZH171MF',
+          site_name: 'rodoviaria',
+          button_id: link.id || link.className || 'contato',
+          contact_channel: 'whatsapp'
+        });
+      }, true);
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOLUWAY | Passagens de ônibus no WhatsApp</title>
