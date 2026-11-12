@@ -1216,3 +1216,19 @@ body {
     font-size: 12px;
   }
 }
+
+/* Composição desktop: fundo levemente à esquerda e card central. */
+@media (min-width: 1101px) {
+  .hero-visual .station-img {
+    width: 106%;
+    max-width: none;
+    left: -6%;
+    right: auto;
+  }
+  .whatsapp-center {
+    align-self: center;
+    justify-content: flex-start;
+    margin-bottom: 0;
+    transform: translateY(24px);
+  }
+}
