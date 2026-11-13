@@ -1,6 +1,76 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
+  <!-- Registro técnico de erros: SOLUWAY -->
+  <script>
+(function () {
+  'use strict';
+  var endpoint = 'https://api.soluway.com.br/api/monitoramento/erros';
+  var nomes = ['Error', 'TypeError', 'ReferenceError', 'SyntaxError', 'RangeError',
+    'URIError', 'EvalError', 'AggregateError'];
+  var arquivos = ['index.html', 'script.js', 'home.css', 'style.css',
+    'monitoramento-erros.js', 'img_rodoviaria.webp'];
+  var minuto = 0, quantidade = 0, total = 0, repetidos = Object.create(null);
+
+  function arquivoLocal(fonte) {
+    if (!fonte) return 'index.html';
+    try {
+      var url = new URL(fonte, location.href);
+      if (url.origin !== location.origin) return null;
+      var nome = url.pathname.split('/').pop() || 'index.html';
+      return arquivos.indexOf(nome) >= 0 ? nome : 'outro-arquivo';
+    } catch (_) { return null; }
+  }
+  function enviar(tipo, nome, arquivo, linha, coluna) {
+    if (!arquivo || typeof window.fetch !== 'function') return;
+    var atual = Math.floor(Date.now() / 60000);
+    if (atual !== minuto) {
+      minuto = atual; quantidade = 0; repetidos = Object.create(null);
+    }
+    var n = nomes.indexOf(nome) >= 0 ? nome : 'OutroErro';
+    var l = Number.isInteger(linha) && linha >= 0 && linha <= 10000000 ? linha : 0;
+    var c = Number.isInteger(coluna) && coluna >= 0 && coluna <= 10000000 ? coluna : 0;
+    var chave = [tipo, n, arquivo, l, c].join(':');
+    if (quantidade >= 5 || total >= 10 || repetidos[chave]) return;
+    repetidos[chave] = true; quantidade += 1; total += 1;
+    var pagina = location.pathname === '/lgpd.html' ? '/lgpd.html' :
+      location.pathname === '/' || location.pathname === '/index.html' ? '/' : '/outra-pagina';
+    try {
+      window.fetch(endpoint, {
+        method: 'POST', mode: 'cors', credentials: 'omit', keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ versao: 1, tipo: tipo, nome: n, pagina: pagina,
+          arquivo: arquivo, linha: l, coluna: c })
+      }).catch(function () {});
+    } catch (_) {}
+  }
+  window.addEventListener('error', function (evento) {
+    try {
+      var alvo = evento.target;
+      if (alvo && alvo !== window && /^(SCRIPT|LINK|IMG)$/.test(alvo.tagName || '')) {
+        enviar('recurso', 'Error', arquivoLocal(alvo.src || alvo.href), 0, 0);
+        return;
+      }
+      var nome = evento.error && evento.error.name;
+      enviar('javascript', nome || 'Error', arquivoLocal(evento.filename), evento.lineno, evento.colno);
+    } catch (_) {}
+  }, true);
+  window.addEventListener('unhandledrejection', function (evento) {
+    try {
+      var motivo = evento.reason;
+      enviar('promise', motivo && motivo.name || 'OutroErro', 'outro-arquivo', 0, 0);
+    } catch (_) {}
+  });
+  // Teste voluntário de envio; não lança erro nem interrompe o site.
+  try {
+    if (new URLSearchParams(location.search).get('teste_monitoramento') === '1') {
+      enviar('teste', 'Error', 'index.html', 0, 0);
+    }
+  } catch (_) {}
+})();
+
+  </script>
+
   <!-- Google Analytics: SOLUWAY — Sites públicos -->
     <script async src="https://www.googletagmanager.com/gtm.js?id=G-0V5ZH171MF"></script>
     <script>
